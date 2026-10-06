@@ -12,144 +12,128 @@
 /****  Las imagenes para  'Photo', 'feelX', 'imaX' están en carpeta ./photos **/
 /****  Si se usan nuevas imágenes se deben añadir a esa carpeta **/
 /****  Los valores de rating están entre 1..5 **/
-/****  recursos de imágenes:  https://www.vectorstock.com/royalty-free-vectors/vectors-by_zdeneksasek ***/
-
-
-
+/****  recursos de imágenes:  [https://www.vectorstock.com/royalty-free-vectors/vectors-by_zdeneksasek](https://www.vectorstock.com/royalty-free-vectors/vectors-by_zdeneksasek) ***/
 
 angular.module("angular", [])
-	.controller("controller", ["$scope", function($scope) { 
-		$scope.Grupo_ID ="DIU1.ABCDEF";
-        $scope.Curso ="2021/22";
+    .controller("controller", ["$scope", function($scope) { 
+        $scope.Grupo_ID ="DIU1.ABCDEF";
+        $scope.Curso ="2025/26";
         $scope.Github_ID ="https://github.com/mgea/UX-DIU-Toolkit";
         
-		$scope.JourneyIndex = 0;
+        $scope.JourneyIndex = 0;
         
         $scope.Journeys = [
-			{		
+            {       
                 
                 /*************************************/
                 /**** PRIMER USER JOURNEY MAP  *******/
-                /*** Cambiar datos             *******/
+                /**** PERSONA: LAURA            *******/
+                /**** "La organizadora semanal" *******/
                 /*************************************/
                 
-				Id: 0,
-				Name: "Pedro",
-                Photo: "man.png",
+                Id: 0,
+                Name: "Laura",
+                Photo: "woman.png",
     
                 /*** PASO #1: INSPIRACION ***/ 
-                goal1: "quiere preparar un viaje con sus amigos en Semana Santa",
-                touch1: "agenda",
-                feel1: "4",
-                con1: "ver cuantos días puede tener libres para organizar lugar de viaje ",
+                goal1: "Quiere organizar las comidas de la semana para no improvisar y cocinar más sano",
+                touch1: "Móvil (en casa, por la noche)",
+                feel1: "3",
+                con1: "Cansancio y poco tiempo; miedo a que la app sea complicada o le pida registrarse antes de usarla",
                 ima1: "cartoon-planning.png",
-				
-                /*** PASO #2: DECICION ***/ 
-                goal2: "Busca en internet ofertas para esas fechas",
-                touch2: "Movil",
-                feel2: "2",
-                con2: "hay demasiada información y pierde mucho tiempo, no hay precios 'baratos'",
+                
+                /*** PASO #2: DECISION ***/ 
+                goal2: "Busca en la store una app de recetas con lista de la compra y planificador semanal",
+                touch2: "Móvil (Google Play / App Store)",
+                feel2: "3",
+                con2: "Muchas apps similares; reseñas que hablan de anuncios, funciones de pago o pérdida de datos",
                 ima2: "cartoon-PCangry.png",
                 
                 /*** PASO #3: ACTUA ***/ 
-                
-                goal3: "Decide buscar un alojamiento rural  en plasencia, donde hay procesiones y parece que hará buen tiempo",
-                touch3: "móvil (el tiempo)",
-                feel3: "3",
-                con3: "Está preocupado por el tiempo y el desplazamiento (coche y aparcamiento)",
+                goal3: "Descarga la app, explora recetas rápidas (≤30 min) y aptas para niños usando filtros",
+                touch3: "Móvil (home y buscador de recetas)",
+                feel3: "4",
+                con3: "Si los filtros no funcionan bien o los ingredientes son raros/medidas en tazas, se frustra",
                 ima3: "cartoon-phone.png",
                 
                 /*** PASO #4: OBSERVA ***/ 
-                
-                goal4: "Los amigos le recomiendan una página para escoger alojamientos",
-                touch4: "ordenador",
-                feel4: "4",
-                con4: "Buscar opciones en el lugar que había seleccionado, viendo precios y distancias, tiene que ver si hay aparcamiento fácil",
+                goal4: "Añade recetas a un plan semanal (lunes a domingo, comida/cena) y ajusta raciones",
+                touch4: "Móvil (pantalla de planificación semanal)",
+                feel4: "5",
+                con4: "Necesita mover recetas entre días fácilmente y ver bien los ingredientes totales de la semana",
                 ima4: "cartoon-PCtyping.png",
                 
-                 /*** PASO #5: ANALIZA ***/ 
-                
-                goal5: "Se encuentra 3 opciones que encajan en sus preferencias",
-                touch5: "móvil (whatsapp)",
-                feel5: "2",
-                con5: "Llama a sus amigos (whatsapp no responen) para ver cual es su preferencia, tienen que reservar rápido por los precios",
+                /*** PASO #5: ANALIZA ***/ 
+                goal5: "Genera la lista de la compra: la app agrupa ingredientes, suma cantidades y elimina duplicados",
+                touch5: "Móvil (lista de la compra)",
+                feel5: "5",
+                con5: "Si los ingredientes no se agrupan por categorías/tienda o no puede editar/borrar lo que ya tiene, se complica",
                 ima5: "cartoon-phoning.png",
                 
-                
                 /*** PASO #6: CONCLUSION ***/ 
-                
-                goal6: "Consigue reservar, otro año se encarga otro!",
-                touch6: "ordenador",
-                feel6: "3",
-                con6: "algunos amigos no confirmaron por lo que tuvo que seleccionar reserva con posibilidad de cancelación",
+                goal6: "Comparte la lista con su pareja y la usa en el súper tachando lo comprado; la guarda para la próxima semana",
+                touch6: "Móvil (compartir por WhatsApp y usar en el súper)",
+                feel6: "5",
+                con6: "Necesita que la lista no se desordene al compartir y que funcione bien incluso con mala cobertura",
                 ima6: "cartoon-resting.png",
                 
-			},
-			{	
+            },
+            {   
                 /*************************************/
                 /**** SEGUNDO USER JOURNEY MAP *******/
-                /***      Cambiar datos        *******/
+                /**** PERSONA: DANI               *******/
+                /**** "El foodie ahorrador"     *******/
                 /*************************************/
                 
-				Id: 1,
-				Name: "Monica Suarez",
-                Photo: "woman.png",
+                Id: 1,
+                Name: "Dani",
+                Photo: "man.png",
                 
-				 /*** PASO #1: INSPIRACION ***/ 
-                goal1: "Quiere preparar un viaje con su familia para Verano, tiene sólo 15 dias libres",
-                touch1: "agenda",
-                feel1: "5",
-                con1: "Quiere ir a un pais exotico pero que tenga atracciones para niños pequeños",
+                /*** PASO #1: INSPIRACION ***/ 
+                goal1: "Quiere cocinar algo rico y barato con lo que ya tiene en casa y sin desperdiciar comida",
+                touch1: "Móvil (en la cocina, mirando la nevera)",
+                feel1: "2",
+                con1: "Presupuesto ajustado y sensación de 'no tengo nada' aunque haya ingredientes básicos",
                 ima1: "cartoon-going.png",
                 
-                /*** PASO #2: DECICION ***/ 
-                goal2: "Ir a una agencia de viajes, y decirle sus preferencias y planes",
-                touch2: "Servicio (agencia)",
-                feel2: "4",
-                con2: "Tiene que desplazarse a agencia, explica su intenciones, le llamaran porque no hay nada interesante",
+                /*** PASO #2: DECISION ***/ 
+                goal2: "Busca en redes sociales y en la store una app que sugiera recetas por ingredientes y muestre coste",
+                touch2: "Móvil (TikTok/Instagram + store)",
+                feel2: "3",
+                con2: "Recetas que parecen baratas pero tienen muchos ingredientes; desconfianza por reseñas de anuncios y funciones de pago",
                 ima2: "cartoon-teamthinking.png",
                 
                 /*** PASO #3: ACTUA ***/ 
-                
-                goal3: "Le llaman a los pocos días con un viaje que no le convence",
-                touch3: "Móvil (llamada)",
-                feel3: "2",
-                con3: "Piensa que ha perdido el tiempo",
-                ima3: "cartoon-phoningangry.png",
+                goal3: "Descarga la app e introduce los ingredientes que ya tiene (pollo, arroz, tomate, etc.)",
+                touch3: "Móvil (pantalla de 'mi pantry' / ingredientes)",
+                feel3: "4",
+                con3: "Si la lista de ingredientes es muy larga o confusa, o no encuentra algunos productos, se frustra",
+                ima3: "cartoon-phone-street.png",
                 
                 /*** PASO #4: OBSERVA ***/ 
+                goal4: "Explora recetas sugeridas filtradas por 'barato' y 'pocos ingredientes', con coste aproximado",
+                touch4: "Móvil (listado de recetas con filtros)",
+                feel4: "4",
+                con4: "Necesita ver claramente el coste estimado y que las recetas 'baratas' no tengan productos gourmet",
+                ima4: "cartoon-PCtyping.png",
                 
-                goal4: "Busca una oferta en hoteles cerca de playa y con parque atracciones",
-                touch4: "Móvil (webapp)",
-                feel4: "2",
-                con4: "No hay mucha información del alojamiento ni de lo que hay alrededor, aunque el precio está bien, va por la calle por lo que está incómoda",
-                ima4: "cartoon-phone-street.png",
-                
-                 /*** PASO #5: ANALIZA ***/ 
-                
-                goal5: "Reserva a traves de la aplicación ",
-                touch5: "Móvil (webapp)",
-                feel5: "3",
-                con5: "Le pide muchos datos y le resulta incómodo completar formulario",
+                /*** PASO #5: ANALIZA ***/ 
+                goal5: "Ajusta raciones y ve cómo cambian cantidades y coste; genera lista solo con lo que le falta comprar",
+                touch5: "Móvil (detalle de receta + lista 'lo que me falta')",
+                feel5: "5",
+                con5: "Si el cálculo de coste no es claro o no puede ordenar la lista por supermercado/pasillos, pierde utilidad",
                 ima5: "cartoon-phone-sitting.png",
 
-                
                 /*** PASO #6: CONCLUSION ***/ 
-                
-                goal6: "Consiguie reservar para vacaciones pero no era lo que tenía en mente",
-                touch6: "Ordenador (reserva OK)",
-                feel6: "2",
-                con6: "Tendrá que buscar más información del lugar para ver que actividades ofrece y donde aparacar!",
+                goal6: "Va al súper con la lista (incluso offline), compra sin pasarse y cocina guardando la receta en favoritos",
+                touch6: "Móvil (en el súper y luego en la cocina)",
+                feel6: "5",
+                con6: "Necesita que la app funcione bien offline y que pueda añadir notas/fotos a sus recetas probadas",
                 ima6: "cartoon-PChard.png",
                 
-                
-                
-			}
-		];
+            }
+        ];
         
-		$scope.model = $scope.Journeys[0];
+        $scope.model = $scope.Journeys[0];
 
-	}])
-
-
-
+    }]);
