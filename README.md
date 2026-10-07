@@ -209,3 +209,66 @@ Se consideran “patrones de diseño de producto” que la gente busca y valora:
   - Tener que volver a escribir recetas que ya vio en TikTok o en blogs porque no hay forma fácil de guardarlas.
   - Anuncios invasivos que tapan ingredientes o pasos mientras está cocinando.
   - Que la app no funcione bien offline (en el súper o en la cocina con mala cobertura).
+
+
+### TASK MATRIX
+
+A partir de los perfiles, objetivos, contextos y frustraciones definidos en `Persona.js` para **Laura** ("La organizadora semanal") y **Dani** ("El foodie ahorrador"), se identifican y estructuran las tareas fundamentales de la aplicación.
+
+La siguiente matriz cruza cada tarea con ambos perfiles evaluando su **Frecuencia** (asiduidad de realización) y su **Importancia** (relevancia para cumplir sus metas y evitar el abandono), determinando la **Frecuencia Global** y la **Prioridad de diseño (UX)**:
+
+| Grupo / Categoría | Tarea del Usuario | Laura (Frec. / Imp.) | Dani (Frec. / Imp.) | Frecuencia Global | Prioridad UX |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **Búsqueda y Exploración** | Filtrar recetas rápidas (≤30 min) y aptas para niños | Alta / Alta | Baja / Media | Media | **Alta** |
+| | Filtrar por recetas económicas y pocos ingredientes (≤5 ing., sin gourmet) | Media / Media | Alta / Alta | Alta | **Crítica** |
+| | Buscar recetas por ingredientes disponibles ("Mi despensa" / ¿Qué cocino hoy?) | Media / Media | Alta / Alta | Alta | **Crítica** |
+| | Visualizar detalle de receta (medidas métricas claras, sin anuncios invasivos) | Alta / Alta | Alta / Alta | Alta | **Crítica** |
+| | Ajustar número de raciones con recálculo dinámico de cantidades y coste estimado | Media / Media | Alta / Alta | Alta | **Alta** |
+| **Recetario Personal** | Guardar e importar recetas desde webs y redes sociales (TikTok / Instagram) | Baja / Media | Alta / Alta | Media | **Alta** |
+| | Guardar recetas favoritas en colecciones propias | Media / Alta | Media / Alta | Media | **Alta** |
+| **Planificación** | Planificar menú semanal asignando recetas a días y comidas (comida / cena) | Alta / Alta | Baja / Media | Media | **Crítica** |
+| | Mover y reorganizar recetas entre días en el calendario semanal con agilidad | Alta / Alta | Baja / Baja | Media | **Media** |
+| **Lista de la Compra** | Generar automáticamente lista agregada y deduplicada desde el plan semanal | Alta / Alta | Alta / Alta | Alta | **Crítica** |
+| | Descontar lo que ya se tiene en casa (generar lista de "lo que me falta comprar") | Media / Alta | Alta / Alta | Alta | **Crítica** |
+| | Edición manual de lista (añadir productos extra, editar cantidades, tachar comprados) | Alta / Alta | Alta / Alta | Alta | **Crítica** |
+| | Ordenar la lista por supermercado o por pasillos / categorías | Media / Alta | Alta / Alta | Alta | **Alta** |
+| | Comparar precios de la cesta entre supermercados de la zona (scraping) | Media / Media | Alta / Alta | Alta | **Crítica** |
+| | Compartir la lista de la compra con otra persona (WhatsApp / enlace compartido) | Alta / Alta | Media / Media | Media | **Alta** |
+| | Consultar y marcar la lista de la compra en modo offline (sin conexión) | Media / Alta | Alta / Alta | Alta | **Crítica** |
+| **Acceso y Datos** | Explorar y usar la app sin registro obligatorio inicial (onboarding sin fricción) | Baja* / Alta | Baja* / Alta | Baja | **Alta** |
+| | Sincronización en la nube y persistencia de datos (evitar pérdida en actualizaciones) | Media / Alta | Media / Alta | Media | **Alta** |
+
+*\* Frecuencia baja al ser una acción inicial de onboarding, pero de máxima importancia para evitar el abandono prematuro detectado en las frustraciones de ambos perfiles.*
+
+---
+
+#### Criterios de evaluación y escala
+
+- **Frecuencia:**
+  - **Alta:** Tarea de uso diario o recurrente en cada sesión (ej. consultar recetas, tachar en la lista, buscar por ingredientes).
+  - **Media:** Tarea periódica semanal o quincenal (ej. planificar menú semanal, comparar precios de la compra grande, organizar favoritos).
+  - **Baja:** Tarea ocasional, puntual o de configuración inicial (ej. primer onboarding, importar recetas esporádicas).
+- **Importancia:**
+  - **Alta:** Crítica o determinante para el usuario; un fallo, fricción o ausencia provoca frustración directa o abandono de la app.
+  - **Media:** Tarea conveniente y de gran utilidad que enriquece la experiencia pero no bloquea totalmente el uso diario.
+  - **Baja:** Tarea complementaria o prescindible para ese perfil particular.
+- **Prioridad UX:**
+  - **Crítica (MVP / Core):** Funcionalidades imprescindibles que deben implementarse con máxima usabilidad, accesibilidad y rendimiento desde la primera versión.
+  - **Alta:** Características de alto valor añadido que diferencian la propuesta y satisfacen los objetivos principales de las personas.
+  - **Media / Baja:** Mejoras secundarias o flujos avanzados a incorporar tras consolidar el núcleo de la aplicación.
+
+---
+
+#### Conclusiones del análisis de tareas
+
+1. **Núcleo común (Core del sistema):**
+   - Tanto Laura como Dani convergen en la necesidad de una **gestión de compra inteligente**: la generación automática de la lista agrupando ingredientes, el filtrado de lo que ya se tiene en casa, la edición rápida (tachar en tienda) y el funcionamiento **offline**.
+   - La visualización de recetas debe ser limpia (sin anuncios invasivos como los que frustran a Dani) y con medidas estandarizadas en gramos/unidades familiares (resolviendo el dolor de Laura con medidas anglosajonas).
+
+2. **Diferenciación y balance de perfiles:**
+   - **Laura** lidera la demanda del **planificador semanal** y de la función de **compartir la lista con su pareja** sin que se desordene. Su objetivo es el ahorro de tiempo (menos de 5 minutos).
+   - **Dani** impulsa el motor de **búsqueda por despensa** ("¿qué cocino con lo que tengo?"), el **ajuste dinámico de raciones con coste estimado**, la **comparación de precios por supermercado** y la **importación de recetas desde redes sociales**.
+
+3. **Decisiones de diseño UX:**
+   - **Sin barreras de entrada:** La app permitirá buscar, planificar y listar de forma inmediata sin forzar registro previo.
+   - **Eficiencia visual y fluidez (Glassmorfismo):** Las tareas de mayor frecuencia deben estar accesibles en 1 o 2 toques desde la barra de navegación principal (Home/Recetas, Planificador Semanal, Despensa y Lista de la Compra).
